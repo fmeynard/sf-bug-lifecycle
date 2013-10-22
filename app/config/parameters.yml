@@ -1,0 +1,5 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: 'mongodb://localhost'
+    database_name: 'test_fab'
+    secret: thisIsMySecret

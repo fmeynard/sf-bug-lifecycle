@@ -1,0 +1,28 @@
+imports:
+    - { resource: parameters.yml }
+
+framework:
+    secret:          %secret%
+
+# Doctrine Configuration
+doctrine_mongodb:
+    connections:
+        default:
+            server: %database_host%
+            options:
+                connect: true
+                timeout: 60000
+    default_database: %database_name%
+    document_managers:
+        default:
+            auto_mapping: true
+
+doctrine:
+    dbal: 
+        driver: pdo_sqlite 
+        path: %kernel.cache_dir%/test.db
+        memory:   false
+        charset: UTF8
+    orm:
+        auto_generate_proxy_classes: true
+        auto_mapping: true
