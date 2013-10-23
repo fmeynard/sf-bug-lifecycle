@@ -32,10 +32,6 @@ class LifeCycleTest extends WebTestCase
         }
 
         $this->assertTrue(true, 'Insert FooChildOne : ok ');
-    }
-
-    public function testInsertUpdate()
-    {
-
+        $this->assertEquals(1, $childOne->getInc());
     }
 }

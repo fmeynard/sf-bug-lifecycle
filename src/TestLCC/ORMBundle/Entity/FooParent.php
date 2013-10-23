@@ -23,6 +23,8 @@ abstract class FooParent
     /** @ORM\Column(type="string") */
     protected $bar;
 
+    protected $inc;
+
     public function setId($id)
     {
         $this->id = $id;
@@ -47,9 +49,21 @@ abstract class FooParent
         return $this->bar;
     }
 
+    public function setInc($inc)
+    {
+        $this->inc = $inc;
+
+        return $this;
+    }
+
+    public function getInc()
+    {
+        return $this->inc;
+    }
+
     /** @ORM\PostPersist  */
     public function doStuffOnPostPersist()
     {
-        print_r(['CALLED HERE']);
+        $this->inc = $this->getInc() +1;
     }
 }
